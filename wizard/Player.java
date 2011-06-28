@@ -14,15 +14,22 @@ import java.util.List;
  */
 public abstract  class Player {
     protected int tired;
-    //a hapiness value of 0 means that the player is neither happy(> 0) or sad (< 0)
-    protected int happiness = 0;
+    protected boolean happiness;
     protected PlayerName name;
     protected  PlayerRole role;
     protected PlayerTransitiveVerb action;
-    protected List<Objects> possessions = new ArrayList<Objects>();
+    protected Objects possession;
 
     public Player(PlayerName name) {
         this.name = name;
+    }
+
+    public boolean isHappiness() {
+        return happiness;
+    }
+
+    public void setHappiness(boolean happiness) {
+        this.happiness = happiness;
     }
 
     public PlayerTransitiveVerb getAction() {
@@ -41,12 +48,12 @@ public abstract  class Player {
         this.name = name;
     }
 
-    public List<Objects> getPossessions() {
-        return possessions;
+    public Objects getPossessions() {
+        return this.possession;
     }
 
-    public void addPossessions(Objects possession) {
-        this.possessions.add(possession);
+    public void setPossessions(Objects possession) {
+        this.possession = possession;
     }
 
     public PlayerRole getRole() {

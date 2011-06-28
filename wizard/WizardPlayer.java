@@ -23,7 +23,7 @@ public class WizardPlayer extends Player{
                 + ", " + object2.getType().toString() + ")");
     }
 
-    public String tagPlayer(Player player)
+    public String tag(Player player)
     {
         player.role = PlayerRole.servant;
         return ("tag(" +this.name.toString() + ", " + player.name.toString()
